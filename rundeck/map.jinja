@@ -38,9 +38,38 @@
     },
 }, merge=salt['pillar.get']('rundeck:lookup')) %}
 
+{%- set server = salt['grains.filter_by']({
+  'Debian': {
+    'home_dir': '/var/lib/rundeck',
+    'root_dir': '/srv/rundeck',
+    'user': {
+      'name': 'rundeck',
+      'group': 'rundeck',
+    },
+    'ssh': {
+      'user': 'rundeck',
+      'timeout': 300000,
+    },
+    'api': {
+        'port': 4440,
+        'https': False,
+    },
+    'users': {},
+    'tokens': {},
+    'pkgs': ['python-requests']
+  },
+}, merge=salt['pillar.get']('rundeck:server')) %}
+
+{%- set client = salt['pillar.get']('rundeck:client') %}
+
 {% set rundeck_settings = salt['pillar.get'](
         'rundeck',
         default=os_family_map,
         merge=True
     )
 %}
+
+{% macro make_url(endpoint) -%}
+{%- if endpoint.get('https', False) -%}https://{%- else -%}http://{%- endif -%}
+{{ endpoint.host }}:{{ endpoint.port }}
+{%- endmacro %}

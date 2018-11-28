@@ -9,3 +9,6 @@ include:
     - rundeck.config
     - rundeck.plugins
     - rundeck.service
+{% if pillar.rundeck.client is defined %}
+    - rundeck.client
+{% endif %}
