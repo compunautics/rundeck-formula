@@ -364,10 +364,10 @@ def get_session():
     def make_url(url):
         return urljoin(make_url.base_url, url)
 
-    rundeck_url = __salt__['config.get']('rundeck.url')
-    api_token = __salt__['config.get']('rundeck.api_token')
-    username = __salt__['config.get']('rundeck.username')
-    password = __salt__['config.get']('rundeck.password')
+    rundeck_url = __salt__['config.get']('rundeck:url')
+    api_token = __salt__['config.get']('rundeck:api_token')
+    username = __salt__['config.get']('rundeck:username')
+    password = __salt__['config.get']('rundeck:password')
 
     if not rundeck_url:
         raise salt.exceptions.SaltInvocationError(
