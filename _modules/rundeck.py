@@ -394,7 +394,7 @@ def get_session():
                 'j_password': password,
             },
         )
-        if (resp.status_code != 200 or
+        if (resp.status_code != 302 or
                 '/user/error' in resp.url or
                 '/user/login' in resp.url):
             raise salt.exceptions.SaltInvocationError(
