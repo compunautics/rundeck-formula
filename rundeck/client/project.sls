@@ -21,6 +21,8 @@ rundeck-{{ project_name }}-resources:
     - user: {{ server.user.name }}
     - group: {{ server.user.group }}
     - mode: 640
+    - dir_mode: 750
+    - makedirs: True
     - context:
         project_name: {{ project_name }}
     - require:
