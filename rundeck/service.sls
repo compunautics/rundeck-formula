@@ -8,7 +8,7 @@ rundeck.service:
     service.running:
         - name: {{ rundeck_settings.service }}
         - enable: True
-        - init_delay: 60
+        - init_delay: 90
         - require:
             - pkg: {{ rundeck_settings.pkg }}
         - watch:
