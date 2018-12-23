@@ -31,18 +31,6 @@ rundeck-{{ project_name }}-resources:
     - onlyif: 'false'
     {%- endif %}
 
-rundeck-{{ project_name }}-properties:
-  file.managed:
-    - name: {{ server.root_dir }}//rundeck/projects/{{ project_name }}/etc/project.properties
-    - source: salt://rundeck/files/project.properties
-    - user: {{ server.user.name }}
-    - group: {{ server.user.group }}
-    - mode: 0640
-    - dir_mode: 750
-    - makedirs: True
-    - require:
-      - rundeck_project: rundeck-{{ project_name }}-project
-
 {%- set plugin = project.plugin|default({}) %}
 
 {%- if plugin.import is defined %}
