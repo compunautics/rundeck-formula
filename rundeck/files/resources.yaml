@@ -9,7 +9,7 @@
   tags: {{ node.get("tags", [])|yaml }}
 
 {%- endfor %}
-resources.source.1.config.args=-s *
+resources.source.1.config.args=-s -C "*"
 resources.source.1.config.file=/opt/rundeck/scripts/salt-gen-resource/SaltGenResource.py
 resources.source.1.config.format=resourceyaml
 resources.source.1.config.interpreter=sudo
