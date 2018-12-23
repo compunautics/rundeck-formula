@@ -321,7 +321,7 @@ def create_project_config(project_name, params, config=None):
         'project.ssh-keypath': '/var/rundeck/.ssh/id_rsa',
         'resources.source.1.type': 'file',
         'resources.source.2.config.argsQuoted': 'false',
-        'resources.source.2.config.args': '-s -C "*"',
+        'resources.source.2.config.args': '-C * -a ip4_interfaces:tun0:0 username=rundeck-svc',
         'resources.source.2.config.file': '/opt/rundeck/scripts/salt-gen-resource/SaltGenResource.py',
         'resources.source.2.config.format': 'resourceyaml',
         'resources.source.2.config.interpreter': 'sudo',
