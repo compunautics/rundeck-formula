@@ -9,3 +9,8 @@
   tags: {{ node.get("tags", [])|yaml }}
 
 {%- endfor %}
+resources.source.1.config.args=
+resources.source.1.config.file=/opt/rundeck/scripts/SaltGenResource.py
+resources.source.1.config.format=resourceyaml
+resources.source.1.config.interpreter=sudo
+resources.source.1.type=script
