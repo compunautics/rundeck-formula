@@ -346,6 +346,7 @@ def create_scm_import_config(project_name, params, config=None):
         'branch': params.get('branch', 'master'),
         'fetchAutomatically': 'true',
         'format': format,
+        'useFilePattern': true,
         'pathTemplate': params.get(
             'path_template', '${job.group}${job.name}.${config.format}'),
         'importUuidBehavior': params.get('import_uuid_behavior', 'remove'),
