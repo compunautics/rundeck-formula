@@ -347,6 +347,8 @@ def create_scm_import_config(project_name, params, config=None):
         'fetchAutomatically': 'true',
         'format': format,
         'useFilePattern': true,
+        'filePattern': params.get(
+            'file_pattern', '.*\.yaml'),
         'pathTemplate': params.get(
             'path_template', '${job.group}${job.name}.${config.format}'),
         'importUuidBehavior': params.get('import_uuid_behavior', 'remove'),

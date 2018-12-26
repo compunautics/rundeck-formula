@@ -54,6 +54,9 @@ rundeck-{{ project_name }}-scm-import:
 {%- if _import.path_template is defined %}
     - path_template: {{ _import.path_template }}
 {%- endif %}
+{%- if _import.file_pattern is defined %}
+    - file_pattern: {{ _import.file_pattern }}
+{%- endif %}
     - require:
       - rundeck_project: rundeck-{{ project_name }}-project
     {%- if grains.get('noservices', False) %}
