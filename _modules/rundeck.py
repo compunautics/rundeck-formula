@@ -346,7 +346,7 @@ def create_scm_import_config(project_name, params, config=None):
         'branch': params.get('branch', 'master'),
         'fetchAutomatically': 'true',
         'format': format,
-        'useFilePattern': true,
+        'useFilePattern': 'true',
         'filePattern': params.get(
             'file_pattern', '.*\.yaml'),
         'pathTemplate': params.get(
