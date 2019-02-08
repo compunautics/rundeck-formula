@@ -39,6 +39,10 @@ framework.ssh.user = {{ rundeck_settings.framework.ssh_user|default('rundeck') }
 # "0" value means wait forever.
 framework.ssh.timeout = {{ rundeck_settings.framework.ssh_timeout|default('0') }}
 
+# ----------------------------------------------------------------
+# MISC Options
+# ----------------------------------------------------------------
+rundeck.disable.ref.stats = {{ rundeck_settings.framework.rundeck_disable_ref_stats|default('true') }}
 
 # ----------------------------------------------------------------
 # Auto generated server UUID: {% raw %}{{{% endraw %} {{ rundeck_settings.framework.server_uuid }} {% raw %}}}{% endraw %}
