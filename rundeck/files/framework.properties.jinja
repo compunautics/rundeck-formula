@@ -43,6 +43,7 @@ framework.ssh.timeout = {{ rundeck_settings.framework.ssh_timeout|default('0') }
 # MISC Options
 # ----------------------------------------------------------------
 rundeck.disable.ref.stats = {{ rundeck_settings.framework.rundeck_disable_ref_stats|default('true') }}
+framework.file-copy-destination-dir = {{ rundeck_settings.framework.file_copy_destination_dir|default('/tmp') }}
 
 # ----------------------------------------------------------------
 # Auto generated server UUID: {% raw %}{{{% endraw %} {{ rundeck_settings.framework.server_uuid }} {% raw %}}}{% endraw %}
