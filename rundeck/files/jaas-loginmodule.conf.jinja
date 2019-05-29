@@ -142,6 +142,9 @@ RDpropertyfilelogin {
     {%- if rundeck_settings.login.ldap.ignore_roles is defined %}
         ignoreRoles="{{ rundeck_settings.login.ldap.ignore_roles|lower }}"
     {%- endif %}
+    {%- if rundeck_settings.login.ldap.ldaps_verify_hostname is defined %}
+        ldapsVerifyHostname="{{ rundeck_settings.login.ldap.ldaps_verify_hostname|lower }}"
+    {%- endif %}
         providerUrl="{{ rundeck_settings.login.ldap.provider_url }}";
 {%- endif %}
 
