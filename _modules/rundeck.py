@@ -391,6 +391,7 @@ def get_session():
     make_url.base_url = rundeck_url
 
     session = requests.Session()
+    session.verify = False
 
     if api_token:
         session.headers.update({
