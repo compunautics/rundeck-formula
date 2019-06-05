@@ -404,7 +404,7 @@ def get_session():
                 'j_password': password,
             },
         )
-        if (resp.status_code != 200):
+        if (resp.status_code not in (200,302)):
             raise salt.exceptions.SaltInvocationError(
                 "Username/password authorization failed in Rundeck {} for "
                 "user {}".format(rundeck_url, username))
