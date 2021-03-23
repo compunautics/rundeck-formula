@@ -16,6 +16,7 @@
         'pkg_java': salt['grains.filter_by']({
             '14': 'openjdk-7-jdk',
             '16': 'openjdk-8-jdk',
+            '18': 'openjdk-11-jdk',
         }, grain='osmajorrelease'),
         'user': 'rundeck',
         'group': 'rundeck',
