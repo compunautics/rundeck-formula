@@ -9,6 +9,8 @@ rundeck-{{ project_name }}-project:
   rundeck_project.present:
     - name: {{ project_name }}
     - description: {{ project.description|default('') }}
+    - resource_args: {{ project.resource_args|default('') }}
+    - resources: {{ project.resources|default('') }}
     {%- if grains.get('noservices', False) %}
     - onlyif: 'false'
     {%- endif %}
