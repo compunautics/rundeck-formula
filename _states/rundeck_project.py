@@ -13,7 +13,7 @@ def __virtual__():
     return True
 
 
-def present(name, description=''):
+def present(name, description='', resource_args='', resources=''):
     ret = {
         'name': name,
         'changes': {},
@@ -27,6 +27,8 @@ def present(name, description=''):
         return ret
     params = {
         "description": description,
+        "resource_args": resource_args,
+        "resources": resources,
     }
     project = __salt__['rundeck.get_project'](name)
     if project:
